@@ -1,0 +1,8 @@
+{
+	"provider": ["IBM"], 
+	"name":  "DOcplexcloud R predict accident sample",
+	"model": [ "CPLEX" ],
+	"development": [ "R" ],
+	"category": [ {"APPLICATION":["Desktop Application"]} ],
+	"abstract": "This shiny app shows how the IBM Data Science Experience was leveraged to show the results of a car accident predictive model in New York City, then compute the optimal locations for prepositionning ambulances."
+}

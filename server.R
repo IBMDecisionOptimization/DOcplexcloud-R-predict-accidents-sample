@@ -3,6 +3,13 @@ if(!require(leaflet)) {
 }
 library(leaflet)
 
+# install the docplexcloud-R-client
+if(!require(devtools)){
+    install.packages("devtools")
+}
+library(devtools)
+install_github("IBMDecisionOptimization/DOcplexcloud-R-client")
+
 require('docplexcloud')
 
 # if an environment variable DOCPLEXCLOUD_URL is set, use that as the base url,

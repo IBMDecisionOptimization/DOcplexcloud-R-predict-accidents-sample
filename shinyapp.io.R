@@ -10,6 +10,6 @@ library(rsconnect)
 rsconnect::setAccountInfo(name='docplex',
                           token='49C8A4C3C481B266EDF2D86125950D55',
                           secret='FcJRBP98Luw8vVB7IOzz2kWTYPbaawDCEwQ/URCS')
-rsconnect::deployApp('/Users/vberaudi/ILOG/predict-accidents')
+rsconnect::deployApp('blabla/predict-accidents')
 
 

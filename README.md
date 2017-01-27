@@ -1,6 +1,11 @@
-# Shiny apps in the IBM data science experience
+# Shiny apps in the IBM data science experience with Optimization.
 
-Shiny Apps for datascience.ibm.com
+This app is extended the capabilities of the [original app](https://github.com/IBMDataScience/dsx-shiny-apps) by enabling you to select a number of ambulances that will then be optimally poisitionned to be able to handle the accidents in New York.
+
+It is an example of how to mix Optimization written in Python with a R prediction.
+The Python script will be run on CPLEX Service, thanks to the R docloud connector.
+
+The optimization model is an adaptation of an official CPLEX for Pythion example: [best shop locations](https://github.com/IBMDecisionOptimization/docplex-examples/blob/master/examples/mp/jupyter/chicago_coffee_shops.ipynb)
 
 ## Predictions of car accident in NYC based on weather data:
 
@@ -8,11 +13,27 @@ This shiny app shows how the IBM Data Science Experience was leveraged to show t
 
 ###### Running the Shiny App
 - Download the predict-accidents [zip file](https://github.com/IBMDecisionOptimization/DOcplexcloud-R-predict-accidents-sample/archive/master.zip) to your laptop (no need to unzip!)
-- Open RStudio in [Data Science Experience](http://datascience.ibm.com/) from the left navigation bar 
+- Open RStudio in [Data Science Experience](http://datascience.ibm.com/) from the left navigation bar, or a local studio
 - On the bottom right panel of RStudio, under "Files", click on the "Upload" option
 - Click on "Choose File" and browse for the "predict-accidents.zip" on your laptop (dowloaded on the first step)
 - Click on the "predict-accidents" directory
 - Open the server.R file by clicking on it in RStudio
 - On the top left panel, open the shiny app by clicking on the "Run App" button
 
-You should get a really cool map that shows the probabilities of car accidents per zip code. On the right panel of the app you can interact with the app by choosing the desired date and time of interest. Click on the circles to get the zip code and the probability.
+You should get a really cool map that shows the probabilities of car accidents per zip code. On the right panel of the app you can interact with the app by choosing the desired date and time of interest. 
+
+- Register for a free trial of [CPLEX service](https://dropsolve-oaas.docloud.ibmcloud.com/software/analytics/docloud) and get your url and api key.
+- Click on the circles to get the zip code and the probability.
+- Enter you url and api key where needed
+- Select a date
+- Select a number of ambulances to optimally position.
+
+The app will then be updated with the ambulances positions.
+
+
+#### Deploying the Shiny App
+- Register for a free trial on [ShinyIO](https://www.shinyapps.io/)
+- Update the shinyapp script file
+- Run it.
+
+You app will be deployed on shinyapp website and anybody will be able to play with the application.

@@ -1,8 +1,0 @@
-name: predict-accidents
-title:
-account: docplex
-server: shinyapps.io
-appId: 139295
-bundleId: 622133
-url: https://docplex.shinyapps.io/predict-accidents/
-when: 1479816888.49947

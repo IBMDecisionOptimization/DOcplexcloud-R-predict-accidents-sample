@@ -29,11 +29,3 @@ You should get a really cool map that shows the probabilities of car accidents p
 - Select a number of ambulances to optimally position.
 
 The app will then be updated with the ambulances positions.
-
-
-#### Deploying the Shiny App
-- Register for a free trial on [ShinyIO](https://www.shinyapps.io/)
-- Update the shinyapp script file
-- Run it.
-
-You app will be deployed on shinyapp website and anybody will be able to play with the application.

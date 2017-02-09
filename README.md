@@ -15,15 +15,15 @@ This shiny app shows how the IBM Data Science Experience was leveraged to show t
 - Download the predict-accidents [zip file](https://github.com/IBMDecisionOptimization/DOcplexcloud-R-predict-accidents-sample/archive/master.zip) to your laptop (no need to unzip!)
 - Open RStudio in [Data Science Experience](http://datascience.ibm.com/) from the left navigation bar, or a local studio
 - On the bottom right panel of RStudio, under "Files", click on the "Upload" option
-- Click on "Choose File" and browse for the "predict-accidents.zip" on your laptop (dowloaded on the first step)
-- Click on the "predict-accidents" directory
-- Open the server.R file by clicking on it in RStudio
-- On the top left panel, open the shiny app by clicking on the "Run App" button
+- Click "Choose File" and browse for the "predict-accidents.zip" on your laptop (dowloaded on the first step)
+- Open the "predict-accidents" directory
+- Click to open the `server.R` file in RStudio
+- On the top left panel, click "Run App" button to open the Shiny app.
 
 You should get a really cool map that shows the probabilities of car accidents per zip code. On the right panel of the app you can interact with the app by choosing the desired date and time of interest. 
 
 - Register for a free trial of [CPLEX service](https://dropsolve-oaas.docloud.ibmcloud.com/software/analytics/docloud) and get your url and api key.
-- Click on the circles to get the zip code and the probability.
+- Click the circles to get the zip code and the probability.
 - Enter you url and api key where needed
 - Select a date
 - Select a number of ambulances to optimally position.

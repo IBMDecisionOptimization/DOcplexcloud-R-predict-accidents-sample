@@ -5,7 +5,7 @@ This app extends the capabilities of the [original app](https://github.com/IBMDa
 It is an example of how to mix Optimization written in Python with an R prediction.
 The Python script will be run on CPLEX Service, thanks to the R docloud connector.
 
-The optimization model is an adaptation of an official CPLEX for Pythion example: [best shop locations](https://github.com/IBMDecisionOptimization/docplex-examples/blob/master/examples/mp/jupyter/chicago_coffee_shops.ipynb)
+The optimization model is an adaptation of an official CPLEX for Python example: [best shop locations](https://github.com/IBMDecisionOptimization/docplex-examples/blob/master/examples/mp/jupyter/chicago_coffee_shops.ipynb)
 
 ## Predictions of car accident in NYC based on weather data:
 

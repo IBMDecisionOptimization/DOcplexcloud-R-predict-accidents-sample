@@ -22,7 +22,7 @@ This Shiny app shows how the IBM Data Science Experience was leveraged to show t
 
 You obtain an interactive map that shows the probabilities of car accidents per zip code. On the right panel of the app you can interact with the app by choosing the desired date and time of interest. 
 
-- Register for a free trial of [CPLEX service](https://dropsolve-oaas.docloud.ibmcloud.com/software/analytics/docloud) and get your url and api key.
+- Register for a free trial of [CPLEX service](https://dropsolve-oaas.docloud.ibmcloud.com/software/analytics/docloud) and get your URL and API key.
 - Click the circles to get the zip code and the probability.
 - Enter you url and api key where needed
 - Select a date

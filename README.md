@@ -1,15 +1,15 @@
 # Shiny apps in the IBM data science experience with Optimization.
 
-This app is extended the capabilities of the [original app](https://github.com/IBMDataScience/dsx-shiny-apps) by enabling you to select a number of ambulances that will then be optimally positioned to be able to handle the accidents in New York.
+This app extends the capabilities of the [original app](https://github.com/IBMDataScience/dsx-shiny-apps) by enabling you to select a number of ambulances that will then be optimally positioned to be able to handle the accidents in New York.
 
-It is an example of how to mix Optimization written in Python with a R prediction.
+It is an example of how to mix Optimization written in Python with an R prediction.
 The Python script will be run on CPLEX Service, thanks to the R docloud connector.
 
 The optimization model is an adaptation of an official CPLEX for Pythion example: [best shop locations](https://github.com/IBMDecisionOptimization/docplex-examples/blob/master/examples/mp/jupyter/chicago_coffee_shops.ipynb)
 
 ## Predictions of car accident in NYC based on weather data:
 
-This shiny app shows how the IBM Data Science Experience was leveraged to show the results of a car accident predictive model in New York City. The model was trained using historical data of car accidents and IBM weather's data. The weather conditions per zip code were used as features to train a logistic regression model that predicts the probability of a car accident at the zip code level. 
+This shiny app shows how the IBM Data Science Experience was leveraged to show the results of a car accident predictive model in New York City. The model was trained using historical data of car accidents and IBM weather data. The weather conditions per zip code were used as features to train a logistic regression model that predicts the probability of a car accident at the zip code level. 
 
 ###### Running the Shiny App
 - Download the predict-accidents [zip file](https://github.com/IBMDecisionOptimization/DOcplexcloud-R-predict-accidents-sample/archive/master.zip) to your laptop (no need to unzip!)

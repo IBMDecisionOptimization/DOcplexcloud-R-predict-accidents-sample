@@ -2,7 +2,7 @@
 
 This app extends the capabilities of the [original app](https://github.com/IBMDataScience/dsx-shiny-apps) by enabling you to select a number of ambulances that will then be optimally positioned to be able to handle the accidents in New York.
 
-It is an example of how to mix Optimization written in Python with an R prediction.
+It is an example of how to mix Optimization written in Python with an R application.
 The Python script will be run on CPLEX Service, thanks to the R DOcplexcloud connector.
 
 The optimization model is an adaptation of an official CPLEX for Python example: [best shop locations](https://github.com/IBMDecisionOptimization/docplex-examples/blob/master/examples/mp/jupyter/chicago_coffee_shops.ipynb)

@@ -17,8 +17,8 @@ This shiny app shows how the IBM Data Science Experience was leveraged to show t
 - On the bottom right panel of RStudio, under "Files", click on the "Upload" option
 - Click "Choose File" and browse for the "predict-accidents.zip" on your laptop (dowloaded on the first step)
 - Open the "predict-accidents" directory
-- Click to open the `server.R` file in RStudio
-- On the top left panel, click "Run App" button to open the Shiny app.
+- Click the `server.R` file to open it in RStudio
+- On the upper left panel, click "Run App" to open the Shiny app.
 
 You should get a really cool map that shows the probabilities of car accidents per zip code. On the right panel of the app you can interact with the app by choosing the desired date and time of interest. 
 
@@ -26,6 +26,6 @@ You should get a really cool map that shows the probabilities of car accidents p
 - Click the circles to get the zip code and the probability.
 - Enter you url and api key where needed
 - Select a date
-- Select a number of ambulances to optimally position.
+- Select the number of ambulances to optimally position.
 
 The app will then be updated with the ambulances positions.

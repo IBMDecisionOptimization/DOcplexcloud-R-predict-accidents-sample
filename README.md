@@ -1,6 +1,6 @@
 # Shiny apps in the IBM data science experience with Optimization.
 
-This app is extended the capabilities of the [original app](https://github.com/IBMDataScience/dsx-shiny-apps) by enabling you to select a number of ambulances that will then be optimally poisitionned to be able to handle the accidents in New York.
+This app is extended the capabilities of the [original app](https://github.com/IBMDataScience/dsx-shiny-apps) by enabling you to select a number of ambulances that will then be optimally positionned to be able to handle the accidents in New York.
 
 It is an example of how to mix Optimization written in Python with a R prediction.
 The Python script will be run on CPLEX Service, thanks to the R docloud connector.

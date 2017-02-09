@@ -20,7 +20,7 @@ This shiny app shows how the IBM Data Science Experience was leveraged to show t
 - Click the `server.R` file to open it in RStudio
 - On the upper left panel, click "Run App" to open the Shiny app.
 
-You should get a really cool map that shows the probabilities of car accidents per zip code. On the right panel of the app you can interact with the app by choosing the desired date and time of interest. 
+You obtain an interactive map that shows the probabilities of car accidents per zip code. On the right panel of the app you can interact with the app by choosing the desired date and time of interest. 
 
 - Register for a free trial of [CPLEX service](https://dropsolve-oaas.docloud.ibmcloud.com/software/analytics/docloud) and get your url and api key.
 - Click the circles to get the zip code and the probability.
@@ -28,4 +28,4 @@ You should get a really cool map that shows the probabilities of car accidents p
 - Select a date
 - Select the number of ambulances to optimally position.
 
-The app will then be updated with the ambulances positions.
+The app will then be updated with the ambulance positions.

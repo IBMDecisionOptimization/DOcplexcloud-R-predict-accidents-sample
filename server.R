@@ -4,11 +4,13 @@ if(!require(leaflet)) {
 library(leaflet)
 
 # install the docplexcloud-R-client
-if(!require(devtools)){
+if (!require('docplexcloud')){
+  if(!require(devtools)){
     install.packages("devtools")
+  }
+  library(devtools)
+  install_github("IBMDecisionOptimization/DOcplexcloud-R-client")
 }
-library(devtools)
-install_github("IBMDecisionOptimization/DOcplexcloud-R-client")
 
 require('docplexcloud')
 
@@ -68,7 +70,10 @@ server =
     dateIn <- input$date
     timeIn <- input$time
     nb <- input$nb
-    apiKey = ifelse(defaultApiKey == "", input$api_key, defaultApiKey)
+    apiKey = defaultApiKey
+    if (apiKey == "") {
+      apiKey = input$api_key
+    }
     cplexModel <- paste(readLines("ambulances.py"), collapse = '\n')
 
     params <- paste("nb", toString(nb), sep = '\n')

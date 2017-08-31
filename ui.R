@@ -31,7 +31,7 @@ ui =
         selectInput("date","Date",dates),
         sliderInput("time","Time", min = 0, max = 23, value = 9),
         sliderInput("nb","Ambulances", min = 3, max = 12, value = 4),
-        ifelse(defaultApiKey == "", passwordInput("api_key", "CPLEX key", value = defaultApiKey), ""),
+        passwordInput("api_key", "CPLEX key", value = defaultApiKey),
         submitButton(text = "Apply Changes", icon = NULL, width = NULL)
       ),
 

@@ -5,3 +5,5 @@
 # results
 results/*
 params.csv
+# rsconnect cache. May contain deployment keys
+rsconnect/

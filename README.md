@@ -24,8 +24,10 @@ You obtain an interactive map that shows the probabilities of car accidents per 
 
 - Register for a free trial of [CPLEX service](https://dropsolve-oaas.docloud.ibmcloud.com/software/analytics/docloud) and get your URL and API key.
 - Click the circles to get the zip code and the probability.
-- Enter you url and api key where needed
+- Enter you url and api key where needed. Or add your key to `global.R` if you want to embed your key in the demo
 - Select a date
 - Select the number of ambulances to optimally position.
 
 The app will then be updated with the ambulance positions.
+
+

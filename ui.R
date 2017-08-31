@@ -7,8 +7,6 @@ library(leaflet)
 dates <- sort(as.vector(unique(probs$date)))
 dates <- dates[1:20] # show predictions of only the next 3 days 
 
-default_key_value = Sys.getenv("DOCPLEXCLOUD_KEY", unset = "")
-
 
 ui = 
   navbarPage(
@@ -33,7 +31,7 @@ ui =
         selectInput("date","Date",dates),
         sliderInput("time","Time", min = 0, max = 23, value = 9),
         sliderInput("nb","Ambulances", min = 3, max = 12, value = 4),
-        passwordInput("api_key", "CPLEX key", value = default_key_value),
+        ifelse(defaultApiKey == "", passwordInput("api_key", "CPLEX key", value = defaultApiKey), ""),
         submitButton(text = "Apply Changes", icon = NULL, width = NULL)
       ),
 

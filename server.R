@@ -12,11 +12,6 @@ install_github("IBMDecisionOptimization/DOcplexcloud-R-client")
 
 require('docplexcloud')
 
-# if an environment variable DOCPLEXCLOUD_URL is set, use that as the base url,
-# otherwise use the default public docplexcloud URL.
-baseUrl <- Sys.getenv("DOCPLEXCLOUD_URL", 
-                      unset="https://api-oaas.docloud.ibmcloud.com/job_manager/rest/v1/")
-
 #################################################
 
 
@@ -73,7 +68,7 @@ server =
     dateIn <- input$date
     timeIn <- input$time
     nb <- input$nb
-    apiKey <- input$api_key
+    apiKey = ifelse(defaultApiKey == "", input$api_key, defaultApiKey)
     cplexModel <- paste(readLines("ambulances.py"), collapse = '\n')
 
     params <- paste("nb", toString(nb), sep = '\n')

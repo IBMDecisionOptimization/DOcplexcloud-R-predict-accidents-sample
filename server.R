@@ -27,7 +27,7 @@ server =
   # Create the map
   output$map <- renderLeaflet({
     leaflet() %>%
-      addProviderTiles("Thunderforest.Transport") %>%
+      addProviderTiles(providers$OpenStreetMap.HOT) %>%
       setView(lng = -73.81,
               lat = 40.71,
               zoom = 11)

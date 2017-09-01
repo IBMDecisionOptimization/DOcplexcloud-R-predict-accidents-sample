@@ -16,6 +16,10 @@ require('docplexcloud')
 
 #################################################
 
+minDate = min(probs$date)
+
+
+#################################################
 
 server = 
   function(input, output, session) {
@@ -35,7 +39,7 @@ server =
     timeIn <- input$time
     if (!is.null(timeIn) & !is.null(dateIn)){
       timeIn = 9
-      dateIn = '2016-11-01'
+      dateIn = minDate
     }
     filt_probs <-
       probs[(probs$hour == timeIn) &
@@ -66,7 +70,7 @@ server =
       )
   })
   
-  observe({
+  observeEvent(input$submit, {
     dateIn <- input$date
     timeIn <- input$time
     nb <- input$nb
@@ -81,39 +85,37 @@ server =
     
     accidents <-
       paste(readLines("predicted-accidents.csv"), collapse = '\n')
+
+    filename = paste(paste(paste(paste("results/ambulances", dateIn, sep = '.'),timeIn, sep = '.'), nb, sep="."), "csv", sep = '.')
+    if (!file.exists(filename)) {
+        client <- DOcplexcloudClient$new(url=baseUrl, key=apiKey, verbose=TRUE)
+        
+        job <- client$submitJob(addAttachment(name="ambulance.py",
+                                              data=charToRaw(cplexModel)),
+                                addAttachment(name="params.csv",
+                                              data=charToRaw(params)),
+                                addAttachment(name="predicted-accidents.csv",
+                                              data=charToRaw(accidents)))
+        
+        ambulances = rawToChar(client$getAttachment(job, "ambulances.csv"))
+        
+        client$deleteJob(job)
+        # create the results/ dir if needed
+        dir.create(dirname(filename), showWarnings = FALSE)
+        write(ambulances, filename)
+    }
+    print(paste(Sys.time(), paste(" Getting the results from ", filename, sep=""), sep=""))
+    my_ambulances <- read.csv(filename)
     
-    if ((timeIn != 9) & (dateIn != '2016-11-01')) {
-      filename = paste(paste(paste(paste("results/ambulances", dateIn, sep = '.'),timeIn, sep = '.'), nb, sep="."), "csv", sep = '.')
-      if (!file.exists(filename)) {
-          client <- DOcplexcloudClient$new(url=baseUrl, key=apiKey, verbose=TRUE)
-          
-          job <- client$submitJob(addAttachment(name="ambulance.py",
-                                                data=charToRaw(cplexModel)),
-                                  addAttachment(name="params.csv",
-                                                data=charToRaw(params)),
-                                  addAttachment(name="predicted-accidents.csv",
-                                                data=charToRaw(accidents)))
-          
-          ambulances = rawToChar(client$getAttachment(job, "ambulances.csv"))
-          
-          client$deleteJob(job)
-          # create the results/ dir if needed
-          dir.create(dirname(filename), showWarnings = FALSE)
-          write(ambulances, filename)
-      }
-      print(paste(Sys.time(), paste(" Getting the results from ", filename, sep=""), sep=""))
-      my_ambulances <- read.csv(filename)
+    icon <-
+      makeIcon(iconUrl = "http://www.iconsdb.com/icons/preview/red/ambulance-xxl.png",
+               iconWidth = 25,
+               iconHeight = 50,)
+    
+    leafletProxy("map", data = my_ambulances) %>% 
+      clearMarkers() %>%
+      addMarkers(~LONGITUDE, ~LATITUDE)#, icon = icon)#, popup=paste(~LONGITUDE, ~LATITUDE, sep="\n"))
       
-      icon <-
-        makeIcon(iconUrl = "http://www.iconsdb.com/icons/preview/red/ambulance-xxl.png",
-                 iconWidth = 25,
-                 iconHeight = 50,)
-      
-      leafletProxy("map", data = my_ambulances) %>% 
-        clearMarkers() %>%
-        addMarkers(~LONGITUDE, ~LATITUDE)#, icon = icon)#, popup=paste(~LONGITUDE, ~LATITUDE, sep="\n"))
-      
-      }
   })
   
 }

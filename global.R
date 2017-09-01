@@ -17,4 +17,4 @@ defaultApiKey = Sys.getenv("DOCPLEXCLOUD_KEY",
                            unset = "")
 
 # The predictede accidents data
-probs <- read.csv("data/predicted-accidents-full.csv")
+probs <- read.csv("data/predicted-accidents-full.csv", stringsAsFactors=FALSE)
